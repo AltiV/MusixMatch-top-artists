@@ -34,7 +34,6 @@ const Artists = () => {
         `/chart.artists.get?apikey=${process.env.REACT_APP_MUSIXMATCH_API_KEY}&page_size=10&country=${country}`
       )
       .then(res => {
-        console.log(res.data)
         setArtists(res.data.message.body.artist_list)
       })
       .catch(err => console.log(err))

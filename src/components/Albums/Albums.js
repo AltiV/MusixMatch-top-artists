@@ -101,6 +101,7 @@ const Albums = () => {
                     <Chip
                       label={genre.music_genre.music_genre_name}
                       className={classes.chip}
+                      key={genre.music_genre.music_genre_name}
                     />
                   ))}
                 </TableCell>
