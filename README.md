@@ -1,6 +1,6 @@
 # MusixMatch Top Artists
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/77435339-0b69-42a5-a7a9-af80ea16ff20/deploy-status)](https://app.netlify.com/sites/musixmatch-top-artists/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5d1044a3-1ec3-4e2c-af20-f7c7b6f004fc/deploy-status)](https://app.netlify.com/sites/musixmatch-top-artists/deploys)
 
 See the application here: https://musixmatch-top-artists.netlify.app/
 
