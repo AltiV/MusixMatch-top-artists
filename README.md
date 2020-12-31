@@ -14,7 +14,7 @@ This is a React application bootstraped with [Create React App](https://github.c
 
 ### Installation & Running Application
 
-Download or clone the repository, and run the following code:
+Download or clone the repository, create an .env file as per .env.example specifications, and run the following code:
 
 ```
 $ npm install
