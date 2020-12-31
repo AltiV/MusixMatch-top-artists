@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-function App() {
+import { Toolbar } from '@material-ui/core'
+
+import Navbar from './components/Navbar/Navbar'
+
+import Artists from './components/Artists/Artists'
+import Albums from './components/Albums/Albums'
+import Bookmarks from './components/Bookmarks/Bookmarks'
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Navbar />
+      <Toolbar />
+      <Switch>
+        <Route exact path='/' component={Artists} />
+        <Route path='/bookmarks' component={Bookmarks} />
+        <Route path='/:id' component={Albums} />
+      </Switch>
+    </Router>
+  )
 }
 
-export default App;
+export default App
