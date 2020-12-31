@@ -1,5 +1,0 @@
-/chart.artists.get*  https://api.musixmatch.com/ws/1.1/chart.artists.get:str
-/artist.albums.get*  https://api.musixmatch.com/ws/1.1/artist.albums.get:str
-/album.get*          https://api.musixmatch.com/ws/1.1/album.get:str
-
-/* /index.html 200
