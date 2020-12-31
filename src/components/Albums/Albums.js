@@ -10,14 +10,19 @@ import {
   TableRow,
   Paper,
   IconButton,
+  Chip,
   LinearProgress
 } from '@material-ui/core'
+
+import useStyles from './styles'
 
 import { Bookmark, BookmarkBorder } from '@material-ui/icons'
 
 import axios from 'axios'
 
 const Albums = () => {
+  const classes = useStyles()
+
   const { id } = useParams()
 
   const [albums, setAlbums] = useState(null)
@@ -72,12 +77,14 @@ const Albums = () => {
               <TableCell></TableCell>
               <TableCell>Album Name</TableCell>
               <TableCell align='right'>Release Date</TableCell>
+              <TableCell>Genre(s)</TableCell>
               <TableCell></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {albums.map(row => (
               <TableRow key={row.album.album_id}>
+                {/* API does not seem to return cover art, so this step cannot be feasibly completed */}
                 <TableCell>
                   <img
                     src={row.album.album_coverart_100x100}
@@ -87,6 +94,14 @@ const Albums = () => {
                 <TableCell>{row.album.album_name}</TableCell>
                 <TableCell align='right'>
                   {row.album.album_release_date}
+                </TableCell>
+                <TableCell>
+                  {row.album.primary_genres.music_genre_list.map(genre => (
+                    <Chip
+                      label={genre.music_genre.music_genre_name}
+                      className={classes.chip}
+                    />
+                  ))}
                 </TableCell>
                 <TableCell align='right'>
                   <IconButton
