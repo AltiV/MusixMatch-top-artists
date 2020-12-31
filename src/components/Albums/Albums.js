@@ -28,6 +28,7 @@ const Albums = () => {
   const [albums, setAlbums] = useState(null)
   const [bookmarks, setBookmarks] = useState([])
 
+  // Use HTML5 Local Storage to track bookmarks
   const updateBookmarks = albumId => {
     if (!localStorage.getItem('bookmarks')) {
       localStorage.setItem('bookmarks', '[]')

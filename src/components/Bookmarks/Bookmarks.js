@@ -49,6 +49,7 @@ const Bookmarks = () => {
       bookmarksArr = JSON.parse(bookmarks)
       setBookmarks(bookmarks)
 
+      // A separate API call needs to make for each bookmarked album_id
       for (let id = 0; id < bookmarksArr.length; id++) {
         promises.push(
           axios

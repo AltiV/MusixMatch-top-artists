@@ -19,6 +19,7 @@ const Artists = () => {
   const classes = useStyles()
 
   const [artists, setArtists] = useState(null)
+  // Default to Canada as per instructions
   const [country, setCountry] = useState('CA')
 
   const handleCountryChange = value => {
@@ -42,6 +43,7 @@ const Artists = () => {
       <Typography variant='body2'>
         (Defaults to US results if selected country does not have data)
       </Typography>
+      {/* Put Canada and United States on the top of the list */}
       <CountryDropdown
         value={country}
         valueType='short'
