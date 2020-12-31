@@ -1,8 +1,30 @@
-[build]
-  command = "npm run build && cd functions/node-fetch && npm install"
-  functions = "functions"
+[[redirects]]
+  from = "/chart.artists.get*"
+  to = "https://api.musixmatch.com/ws/1.1/chart.artists.get:splat"
+  status = 200
+  force = true
+  headers = {Access-Control-Allow-Origin = "*"}
+
+[[redirects]]
+  from = "/artist.albums.get*"
+  to = "https://api.musixmatch.com/ws/1.1/artist.albums.get:splat"
+  status = 200
+  force = true
+  headers = {Access-Control-Allow-Origin = "*"}
+
+[[redirects]]
+  from = "/album.get*"
+  to = "https://api.musixmatch.com/ws/1.1/album.get:splat"
+  status = 200
+  force = true
+  headers = {Access-Control-Allow-Origin = "*"}
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
 
 [[headers]]
-  for = "/*"
-    [headers.values]
-    Access-Control-Allow-Origin = "*"
+for = "/*"
+[headers.values]
+Access-Control-Allow-Origin = "*"

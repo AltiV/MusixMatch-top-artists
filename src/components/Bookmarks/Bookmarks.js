@@ -77,8 +77,12 @@ const Bookmarks = () => {
 
       <TableContainer component={Paper}>
         <Table>
-          {bookmarkedAlbums && bookmarkedAlbums.length === 0 && (
+          {!bookmarkedAlbums ? (
+            <caption><LinearProgress /></caption>
+          ) : bookmarkedAlbums && bookmarkedAlbums.length === 0 ? (
             <caption>No bookmarked albums. Go add some!</caption>
+          ) : (
+            <></>
           )}
           <TableHead>
             <TableRow>
@@ -90,11 +94,8 @@ const Bookmarks = () => {
           </TableHead>
 
           <TableBody>
-            {!bookmarkedAlbums ? (
-              <LinearProgress />
-            ) : bookmarkedAlbums.length === 0 ? (
-              <></>
-            ) : (
+            {bookmarkedAlbums &&
+              bookmarkedAlbums.length > 0 &&
               bookmarkedAlbums.map(row => (
                 <TableRow key={row.album_id}>
                   <TableCell>{row.album_name}</TableCell>
@@ -110,8 +111,7 @@ const Bookmarks = () => {
                     </IconButton>
                   </TableCell>
                 </TableRow>
-              ))
-            )}
+              ))}
           </TableBody>
         </Table>
       </TableContainer>
